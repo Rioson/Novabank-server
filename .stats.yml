@@ -1,0 +1,4 @@
+configured_endpoints: 15
+openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/omniplex-inc%2Fnovabank-server-2d04acf28e9bf0880ca0d6caec9fc8292e2371e72a8b09a5fe42779daf8cbc49.yml
+openapi_spec_hash: 958980f3f1870613587785b2424381a6
+config_hash: 52388cf0ad3a34ee1861cd10874d5710
