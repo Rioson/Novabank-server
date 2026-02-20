@@ -20,7 +20,7 @@ base_url = os.environ.get("TEST_API_BASE_URL", "http://127.0.0.1:4010")
 class TestBankAccounts:
     parametrize = pytest.mark.parametrize("client", [False, True], indirect=True, ids=["loose", "strict"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_create(self, client: NovabankServer) -> None:
         bank_account = client.bank_accounts.create(
@@ -30,7 +30,7 @@ class TestBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_create(self, client: NovabankServer) -> None:
         response = client.bank_accounts.with_raw_response.create(
@@ -44,7 +44,7 @@ class TestBankAccounts:
         bank_account = response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_create(self, client: NovabankServer) -> None:
         with client.bank_accounts.with_streaming_response.create(
@@ -60,7 +60,7 @@ class TestBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_retrieve(self, client: NovabankServer) -> None:
         bank_account = client.bank_accounts.retrieve(
@@ -68,7 +68,7 @@ class TestBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_retrieve(self, client: NovabankServer) -> None:
         response = client.bank_accounts.with_raw_response.retrieve(
@@ -80,7 +80,7 @@ class TestBankAccounts:
         bank_account = response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_retrieve(self, client: NovabankServer) -> None:
         with client.bank_accounts.with_streaming_response.retrieve(
@@ -94,7 +94,7 @@ class TestBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_update(self, client: NovabankServer) -> None:
         bank_account = client.bank_accounts.update(
@@ -105,7 +105,7 @@ class TestBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_update(self, client: NovabankServer) -> None:
         response = client.bank_accounts.with_raw_response.update(
@@ -120,7 +120,7 @@ class TestBankAccounts:
         bank_account = response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_update(self, client: NovabankServer) -> None:
         with client.bank_accounts.with_streaming_response.update(
@@ -137,13 +137,13 @@ class TestBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_list(self, client: NovabankServer) -> None:
         bank_account = client.bank_accounts.list()
         assert_matches_type(BankAccountListResponse, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_list(self, client: NovabankServer) -> None:
         response = client.bank_accounts.with_raw_response.list()
@@ -153,7 +153,7 @@ class TestBankAccounts:
         bank_account = response.parse()
         assert_matches_type(BankAccountListResponse, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_list(self, client: NovabankServer) -> None:
         with client.bank_accounts.with_streaming_response.list() as response:
@@ -165,7 +165,7 @@ class TestBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_method_delete(self, client: NovabankServer) -> None:
         bank_account = client.bank_accounts.delete(
@@ -173,7 +173,7 @@ class TestBankAccounts:
         )
         assert bank_account is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_raw_response_delete(self, client: NovabankServer) -> None:
         response = client.bank_accounts.with_raw_response.delete(
@@ -185,7 +185,7 @@ class TestBankAccounts:
         bank_account = response.parse()
         assert bank_account is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     def test_streaming_response_delete(self, client: NovabankServer) -> None:
         with client.bank_accounts.with_streaming_response.delete(
@@ -205,7 +205,7 @@ class TestAsyncBankAccounts:
         "async_client", [False, True, {"http_client": "aiohttp"}], indirect=True, ids=["loose", "strict", "aiohttp"]
     )
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_create(self, async_client: AsyncNovabankServer) -> None:
         bank_account = await async_client.bank_accounts.create(
@@ -215,7 +215,7 @@ class TestAsyncBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_create(self, async_client: AsyncNovabankServer) -> None:
         response = await async_client.bank_accounts.with_raw_response.create(
@@ -229,7 +229,7 @@ class TestAsyncBankAccounts:
         bank_account = await response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_create(self, async_client: AsyncNovabankServer) -> None:
         async with async_client.bank_accounts.with_streaming_response.create(
@@ -245,7 +245,7 @@ class TestAsyncBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_retrieve(self, async_client: AsyncNovabankServer) -> None:
         bank_account = await async_client.bank_accounts.retrieve(
@@ -253,7 +253,7 @@ class TestAsyncBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_retrieve(self, async_client: AsyncNovabankServer) -> None:
         response = await async_client.bank_accounts.with_raw_response.retrieve(
@@ -265,7 +265,7 @@ class TestAsyncBankAccounts:
         bank_account = await response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_retrieve(self, async_client: AsyncNovabankServer) -> None:
         async with async_client.bank_accounts.with_streaming_response.retrieve(
@@ -279,7 +279,7 @@ class TestAsyncBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_update(self, async_client: AsyncNovabankServer) -> None:
         bank_account = await async_client.bank_accounts.update(
@@ -290,7 +290,7 @@ class TestAsyncBankAccounts:
         )
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_update(self, async_client: AsyncNovabankServer) -> None:
         response = await async_client.bank_accounts.with_raw_response.update(
@@ -305,7 +305,7 @@ class TestAsyncBankAccounts:
         bank_account = await response.parse()
         assert_matches_type(BankAccount, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_update(self, async_client: AsyncNovabankServer) -> None:
         async with async_client.bank_accounts.with_streaming_response.update(
@@ -322,13 +322,13 @@ class TestAsyncBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_list(self, async_client: AsyncNovabankServer) -> None:
         bank_account = await async_client.bank_accounts.list()
         assert_matches_type(BankAccountListResponse, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_list(self, async_client: AsyncNovabankServer) -> None:
         response = await async_client.bank_accounts.with_raw_response.list()
@@ -338,7 +338,7 @@ class TestAsyncBankAccounts:
         bank_account = await response.parse()
         assert_matches_type(BankAccountListResponse, bank_account, path=["response"])
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_list(self, async_client: AsyncNovabankServer) -> None:
         async with async_client.bank_accounts.with_streaming_response.list() as response:
@@ -350,7 +350,7 @@ class TestAsyncBankAccounts:
 
         assert cast(Any, response.is_closed) is True
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_method_delete(self, async_client: AsyncNovabankServer) -> None:
         bank_account = await async_client.bank_accounts.delete(
@@ -358,7 +358,7 @@ class TestAsyncBankAccounts:
         )
         assert bank_account is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_raw_response_delete(self, async_client: AsyncNovabankServer) -> None:
         response = await async_client.bank_accounts.with_raw_response.delete(
@@ -370,7 +370,7 @@ class TestAsyncBankAccounts:
         bank_account = await response.parse()
         assert bank_account is None
 
-    @pytest.mark.skip(reason="Prism tests are disabled")
+    @pytest.mark.skip(reason="Mock server tests are disabled")
     @parametrize
     async def test_streaming_response_delete(self, async_client: AsyncNovabankServer) -> None:
         async with async_client.bank_accounts.with_streaming_response.delete(
